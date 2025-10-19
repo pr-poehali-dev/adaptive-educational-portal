@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "name": "Get courses list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": [
+        {
+          "id": "number",
+          "title": "string",
+          "category": "string",
+          "price": "number",
+          "rating": "number"
+        }
+      ],
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "OPTIONS request for CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}

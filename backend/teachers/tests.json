@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "name": "Get teachers list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": [
+        {
+          "id": "number",
+          "name": "string",
+          "specialty": "string",
+          "rating": "number",
+          "students_count": "number"
+        }
+      ],
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "OPTIONS request for CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}

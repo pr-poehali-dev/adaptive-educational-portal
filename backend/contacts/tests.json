@@ -1,0 +1,41 @@
+{
+  "tests": [
+    {
+      "name": "Submit contact form",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Иванов",
+        "email": "ivan@example.com",
+        "phone": "+7 999 123 45 67",
+        "message": "Хочу узнать больше о курсах"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string",
+        "request_id": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Submit form without required fields",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "OPTIONS request for CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
